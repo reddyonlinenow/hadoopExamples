@@ -1,0 +1,11 @@
+A = LOAD 'data1.log' using PigStorage('\t') as (id:int, name:chararray,sal:int);
+B = LOAD 'data2.log' using PigStorage('\t') as (Id:int, Name:chararray,Sal:int);
+JoinData = JOIN A BY id LEFT, B BY Id;
+LJoin = JOIN A BY id LEFT, B BY Id;
+RJOIN = JOIN A BY id RIGHT, B BY Id;
+FJoin = JOIN A BY id FULL, B BY Id;
+--selecFJOIN = FOREACH FJoin GENERATE id, name, Name;
+STORE JoinData INTO 'INNERJOIN';
+STORE LJoin INTO 'LEFTJOIN';
+STORE RJOIN INTO 'RIGHTJOIN';
+STORE FJoin INTO 'FULLJOIN';

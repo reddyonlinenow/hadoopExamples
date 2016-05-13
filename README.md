@@ -13,4 +13,3 @@ Dynamic Word Count
 
 hadoop jar WordCount.jar com.kelly.hadoop.examples.DynamicWordCountNew /MrInput/Input-Big.txt /MrStaticOutput market
 
-Examples for PIG
